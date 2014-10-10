@@ -75,18 +75,18 @@ void test_binarySearch_given_target_10_and_9_elements_array_should_return_5(void
     TEST_ASSERT_EQUAL(4, result);
 }
 
-void xtest_binarySearch_given_target_5_and_9_elements_array_should_return_negative_1(void)
+void test_binarySearch_given_target_3_and_9_elements_array_should_return_negative_1(void)
 {
-		int array[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+    int array[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     int result;
 
-    result = binarySearch(5, array, 0, 9);
+    result = binarySearch(3, array, 0, 9);
     printf("\n");
 
     TEST_ASSERT_EQUAL(-1, result);
 }
 
-void xtest_binarySearch_given_target_17_and_9_elements_array_should_return_negative_1(void)
+void test_binarySearch_given_target_17_and_9_elements_array_should_return_negative_1(void)
 {
     int array[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
     int result;

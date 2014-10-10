@@ -6,9 +6,6 @@ int binarySearch(int target, int array[], int startIndex, int endIndex)
     int middleIndex = (startIndex + endIndex) / 2;
     printf("middleIndex: %d\n", middleIndex);
 
-    // if(middleIndex % 2 >= 0.5)
-        // middleIndex += 1;
-
     if(target == array[middleIndex])
         return middleIndex;
     else if(startIndex == endIndex)
@@ -16,8 +13,18 @@ int binarySearch(int target, int array[], int startIndex, int endIndex)
     else
     {
         if(target < array[middleIndex])
-            binarySearch(target, array, startIndex, middleIndex - 1);
+        {
+            if(target <= array[middleIndex - 1])
+                binarySearch(target, array, startIndex, middleIndex - 1);
+            else
+                return -1;
+        }
         else
-            binarySearch(target, array, middleIndex + 1, endIndex);
+        {
+            if(target >= array[middleIndex + 1])
+                binarySearch(target, array, middleIndex + 1, endIndex);
+            else
+                return -1;
+        }
     }
 }
